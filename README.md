@@ -1,6 +1,6 @@
 # Overview
 
-The `code-sorter` extension is a powerful tool for organize and sort code elements in JavaScript and TypeScript files within Visual Studio Code. It greatly enhances code readability and maintainability by intelligently grouping and sorting various code snippets, such as `imports`, `variables`, `functions`, `interfaces`, `types`, `enums`, and more, in a structured manner.
+The `code-sorter` extension is a powerful tool for organize and sort code elements in JavaScript and TypeScript files within Visual Studio Code. It greatly enhances code readability and maintainability by intelligently grouping and sorting various code snippets, such as `imports`, `variables`, `functions`, `interfaces`, `types`, `enums`, and more, in a structured manner
 
 <br>
 
