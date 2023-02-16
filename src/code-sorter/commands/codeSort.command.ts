@@ -1,5 +1,5 @@
-import { codeSorter } from '..';
 import * as vscode from 'vscode';
+import { codeSorter } from '..';
 import { formatVue } from '../format/vue';
 
 export const codeSortCommand = vscode.commands.registerCommand('codeSorter.codeSort', async () => {
