@@ -1,7 +1,7 @@
+import { matchRegex } from './matchRegex';
 import { regexMap } from '../constants/regexMap';
 import { IStatement, IStatements } from '../types';
 import { isStatementCompleted } from '../utils/string.utils';
-import { matchRegex } from './matchRegex';
 
 export function extractElements(code: string | string[]): IStatements {
    const result: IStatements = {
