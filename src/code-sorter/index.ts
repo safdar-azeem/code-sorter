@@ -1,6 +1,6 @@
 import { extractElements, sortElements } from './helpers';
-import { sortDefinePropsProperties } from './helpers/sortDefinePropsProperties';
 import { sortByStringLength } from './utils/string.utils';
+import { sortDefinePropsProperties } from './helpers/sortDefinePropsProperties';
 
 export const codeSorter = (code: string | string[]): string => {
    let result = extractElements(code);
