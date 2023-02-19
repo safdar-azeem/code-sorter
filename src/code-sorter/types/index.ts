@@ -1,7 +1,7 @@
 export interface FunctionCategories {
    arrowFunctions: string[];
-   functionExpressions: string[];
    functionDeclarations: string[];
+   functionExpressions: string[];
 }
 
 export type IStatement =
