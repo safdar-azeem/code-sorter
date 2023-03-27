@@ -70,3 +70,4 @@ To use the `codeSorter` extension, follow these steps:
 ## Supported File Types
 
 Currently this extension is primarily designed for JavaScript and TypeScript language. However, it can also be used with other langauges but to sort just single lines of codes
+
