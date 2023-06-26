@@ -1,7 +1,7 @@
 export function sortElements(array: string[]): string[] {
     const newArray = array.sort((a: string, b: string) => a.length - b.length);
 
-    const [sortedArray, linesArray] = newArray.reduce(
+    const [singleLineValues, multiLinesValues] = newArray.reduce(
         (acc: [string[], string[]], item: string) => {
             if (item.includes('\n')) {
                 acc[1].push(item, "");
@@ -13,9 +13,13 @@ export function sortElements(array: string[]): string[] {
         [[], []]
     );
 
-    if (sortedArray.length > 0) {
-        sortedArray.push("");
+    if (singleLineValues.length > 0 && multiLinesValues.length > 0) {
+        singleLineValues.push("");
     }
 
-    return sortedArray.concat(linesArray);
+    if (multiLinesValues.length > 1) {
+        multiLinesValues.pop();
+    }
+
+    return singleLineValues.concat(multiLinesValues);
 }
