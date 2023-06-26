@@ -6,6 +6,9 @@ The `codeSorter` extension is a powerful tool for organizing and sorting code el
 
 # Features
 
+![alt text](preview.gif)
+<br/>
+
 The extension follows a specific order when grouping and sorting different types of code elements within a file:
 
 1. Imports
