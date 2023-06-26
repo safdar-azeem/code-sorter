@@ -1,8 +1,10 @@
 {
    "name": "code-sorter",
-   "displayName": "",
-   "description": "",
+   "displayName": "code-sorter",
+   "description": "Sorts your code",
+   "publisher": "SafdarAzeem",
    "version": "0.0.1",
+   "repository": "https://github.com/safdar-azeem/code-sorter",
    "engines": {
       "vscode": "^1.79.0"
    },
