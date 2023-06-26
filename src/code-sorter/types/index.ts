@@ -6,6 +6,7 @@ export interface VariableCategories {
     objects: string[];
     functionCalls: string[];
     hooks: string[];
+    documentSelectors: string[];
 }
 
 export interface FunctionCategories {
@@ -13,6 +14,12 @@ export interface FunctionCategories {
     arrowFunctions: string[];
     functionExpressions: string[];
     functionDeclarations: string[];
+}
+
+export interface ImportCategories {
+    typeImports: string[];
+    defaultImports: string[];
+    exportImports: string[];
 }
 
 export interface ExtractedElements {
