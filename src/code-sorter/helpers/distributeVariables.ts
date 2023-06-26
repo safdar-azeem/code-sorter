@@ -1,5 +1,6 @@
 import { VariableCategories } from "../types";
-import { removeLastEmptyLines } from '../utils/string.utils';
+import { removeLastEmptyLines, isDocuemntSelectorRegex } from '../utils/string.utils';
+
 
 export function distributeVariables(variables: string[]): VariableCategories {
     const categorizedVariables = variables.reduce<VariableCategories>(
@@ -10,7 +11,11 @@ export function distributeVariables(variables: string[]): VariableCategories {
                 if (cleanVariable.includes('use') || cleanVariable.includes('ref()')) {
                     accumulator.hooks.push(cleanVariable);
                 } else {
-                    accumulator.functionCalls.push(cleanVariable);
+                    if (isDocuemntSelectorRegex.test(cleanVariable)) {
+                        accumulator.documentSelectors.push(cleanVariable);
+                    } else {
+                        accumulator.functionCalls.push(cleanVariable);
+                    }
                 }
             } else if (
                 /^(?:export\s+)?(?:const|let|var)\s+\w+\s*=.*\{.*\};?$/.test(cleanVariable) ||
@@ -36,6 +41,7 @@ export function distributeVariables(variables: string[]): VariableCategories {
             return accumulator;
         },
         {
+            documentSelectors: [],
             undefinedVariables: [],
             numbers: [],
             strings: [],
@@ -45,6 +51,6 @@ export function distributeVariables(variables: string[]): VariableCategories {
             hooks: [],
         }
     );
-
+    console.log(categorizedVariables);
     return categorizedVariables;
 }
