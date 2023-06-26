@@ -29,17 +29,14 @@ export function extractElements(lines: string[]): ExtractedElements {
 
     const processLine = (line: string) => {
         let lineForCondition = line.replace('export default', '');
-        lineForCondition = lineForCondition.replace('export', '');
+        lineForCondition = lineForCondition.replace(/export(?!(\s*{\s*|\s*\*\s*)from)/g, "");
+        lineForCondition = lineForCondition.replace(/\s+/g, ' ');
 
         if (line.includes('export default') || line.includes('export')) {
             lineForCondition = lineForCondition.trim();
         }
 
-        if (lineForCondition.startsWith('import type')) {
-            addCurrentBlockToResult();
-            currentBlockType = 'imports';
-            currentBlock.push(line);
-        } else if (lineForCondition.startsWith('import')) {
+        if (lineForCondition.startsWith('import') || lineForCondition.startsWith('import type') || lineForCondition.startsWith('export * from')) {
             addCurrentBlockToResult();
             currentBlockType = 'imports';
             currentBlock.push(line);
