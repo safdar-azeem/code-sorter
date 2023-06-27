@@ -4,9 +4,7 @@ import { distributeFunctions, distributeVariables, extractElements, sortElements
 export const codeSorter = (lines: string[]): string[] => {
     const { imports, requires, variables, functions, interfaces, types, enums, others } = extractElements(removeEmptyLines(lines));
 
-    const sortedImports = [...Object.values(distributeImports(imports)).map(sortElements)].filter((item) => item.length > 0)
-        .map((item) => [...item, ''])
-        .flat();
+    const sortedImports = [...Object.values(distributeImports(imports)).map(sortElements)].filter((item) => item.length > 0).flat();
 
     const sortedVariables = [...Object.values(distributeVariables(variables)).map(sortElements)]
         .filter((item) => item.length > 0)
@@ -19,7 +17,7 @@ export const codeSorter = (lines: string[]): string[] => {
         .flat();
 
     const sortedElements = [
-        sortedImports,
+        sortElements(imports),
         sortElements(requires),
         sortElements(types),
         sortElements(enums),
