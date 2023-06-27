@@ -1,10 +1,8 @@
 import { removeEmptyLines } from "./utils/array.utils";
-import { distributeFunctions, distributeVariables, extractElements, sortElements, distributeImports } from "./helpers";
+import { distributeFunctions, distributeVariables, extractElements, sortElements, } from "./helpers";
 
 export const codeSorter = (lines: string[]): string[] => {
     const { imports, requires, variables, functions, interfaces, types, enums, others } = extractElements(removeEmptyLines(lines));
-
-    const sortedImports = [...Object.values(distributeImports(imports)).map(sortElements)].filter((item) => item.length > 0).flat();
 
     const sortedVariables = [...Object.values(distributeVariables(variables)).map(sortElements)]
         .filter((item) => item.length > 0)
