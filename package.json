@@ -3,7 +3,7 @@
    "displayName": "code-sorter",
    "description": "Sorts your code",
    "publisher": "SafdarAzeem",
-   "version": "0.0.3",
+   "version": "0.0.5",
    "repository": "https://github.com/safdar-azeem/code-sorter",
    "icon": "icon.png",
    "engines": {
