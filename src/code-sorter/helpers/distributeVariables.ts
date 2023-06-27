@@ -8,7 +8,7 @@ export function distributeVariables(variables: string[]): VariableCategories {
             const cleanVariable = removeLastEmptyLines(variable);
 
             if (cleanVariable.includes('(') && cleanVariable.includes(')')) {
-                if (cleanVariable.includes('use') || cleanVariable.includes('ref()')) {
+                if (cleanVariable.includes('use') || cleanVariable.includes('ref(')) {
                     accumulator.hooks.push(cleanVariable);
                 } else {
                     if (isDocuemntSelectorRegex.test(cleanVariable)) {
@@ -47,10 +47,10 @@ export function distributeVariables(variables: string[]): VariableCategories {
             strings: [],
             arrays: [],
             objects: [],
-            functionCalls: [],
             hooks: [],
+            functionCalls: [],
         }
     );
-    console.log(categorizedVariables);
+
     return categorizedVariables;
 }
